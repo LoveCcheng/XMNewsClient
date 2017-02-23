@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "XMLeftViewController.h"
+#import "XMSideViewController.h"
+#import "XMTabBarController.h"
+
+
 
 @interface AppDelegate ()
 
@@ -16,7 +21,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    XMLeftViewController *leftVC = [[XMLeftViewController alloc]init];
+    XMTabBarController *tabbarVC = [[XMTabBarController alloc]init];
+    
+    XMSideViewController *sideVC = [XMSideViewController SideViewControllerWithLeftController:leftVC andMainController:tabbarVC];
+
+    
+    self.window.rootViewController = sideVC;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyWindow];
+    
+    
     return YES;
 }
 
