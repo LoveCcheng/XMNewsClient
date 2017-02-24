@@ -10,7 +10,8 @@ UIKIT_EXTERN NSString *XMLeftViewShowNotification;
 /** 左边视图隐藏完毕的通知 */
 UIKIT_EXTERN NSString *XMLeftViewHideNotification;
 
-
+/** 左边视图点击选项的通知 */
+UIKIT_EXTERN NSString *XMLeftViewSelectRowNotification;
 
 
 

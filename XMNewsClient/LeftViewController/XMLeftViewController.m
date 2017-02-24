@@ -13,16 +13,20 @@
 
 @property (nonatomic,strong) UITableView *tableView;
 
+@property (nonatomic,strong) NSArray *oneArr;
+
+@property (nonatomic,strong) NSArray *twoArr;
+
 @end
 
 @implementation XMLeftViewController
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.oneArr = @[@"新闻",@"段子",@"关于",@"我的"];
+    self.twoArr = @[@"夜间模式",@"清除缓存",@"联系我们"];
     
     [self CreateTopView];
     
@@ -42,8 +46,7 @@
     imageView.backgroundColor = [UIColor greenColor];
     imageView.layer.cornerRadius = 50;
     imageView.layer.masksToBounds= YES;
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://img2.imgtn.bdimg.com/it/u=4142799652,1018745918&fm=23&gp=0.jpg"]];
-    imageView.image= [UIImage imageWithData:data];
+    imageView.image= [UIImage imageNamed:@"12"];
     
     [topView addSubview:imageView];
 }
@@ -52,8 +55,10 @@
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 150, XMScreenW - 100, 300) style:UITableViewStylePlain];
     tableView.delegate  =self;
     tableView.dataSource = self;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.backgroundColor = [UIColor redColor];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    tableView.backgroundColor = [UIColor whiteColor];
+    //禁止滑动
+    [tableView setScrollEnabled:NO];
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
     
@@ -67,13 +72,26 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    if (section == 0) {
+        return self.oneArr.count;
+    }
+    return self.twoArr.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    cell.textLabel.text = @"我是一个人";
+    if (indexPath.section == 0) {
+        cell.textLabel.text = self.oneArr[indexPath.row];
+        
+    }
+    
+    if (indexPath.section == 1) {
+        cell.textLabel.text = self.twoArr[indexPath.row];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.textLabel.textColor = [UIColor redColor];
     
     return cell;
 }
@@ -83,12 +101,35 @@
 }
 
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 40;
+}
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UILabel *la = [[UILabel alloc]init];
+    la.textColor = [UIColor blueColor];
+    la.frame = CGRectMake(50, 0, 100, 40);
+    if (section == 0) {
+        la.text = @"基本功能";
+    }else{
+        la.text = @"辅助功能";
+    }
+    return la;
+}
 
-
-
-
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    XMLogFun;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"index"] = [NSString stringWithFormat:@"%ld",indexPath.row];
+    if (indexPath.section == 0) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewSelectRowNotification object:dict];
+    }
+}
+-(void)dealloc{
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
 
 
 

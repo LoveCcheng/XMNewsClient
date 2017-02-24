@@ -31,6 +31,14 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickConplete) name:XMLeftViewShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickConpleteNO) name:XMLeftViewHideNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectIndex:) name:XMLeftViewSelectRowNotification object:nil];
+    
+    
+}
+-(void)selectIndex:(NSNotification *)noti{
+    NSDictionary *dict = noti.object;
+    self.selectedIndex = [dict[@"index"] integerValue];
 }
 
 -(void)clickConplete{

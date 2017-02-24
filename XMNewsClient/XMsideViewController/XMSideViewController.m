@@ -65,6 +65,8 @@
     [_MainViewController.view addGestureRecognizer:panGesture];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemClickNot) name:XMLeftItemClickNoti object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(leftViewhide) name:XMLeftViewSelectRowNotification object:nil];
 }
 /** 点击导航栏左边按钮对应的处理 */
 -(void)itemClickNot{
@@ -84,6 +86,17 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewHideNotification object:nil];
         }];
     }
+}
+
+
+-(void)leftViewhide{
+    isClick = !isClick;
+    [UIView animateWithDuration:XManimatedTimeDuration animations:^{
+        _MainViewController.view.transform = CGAffineTransformMakeScale(XMmainControllerScale, XMmainControllerScale);
+        _MainViewController.view.X =0;
+    } completion:^(BOOL finished) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewHideNotification object:nil];
+    }];
 }
 
 /** 处理拖动手势 */
@@ -196,6 +209,11 @@
         _MainViewController.view.X = self.view.width - XMmainControllerSpace;
         _MainViewController.view.transform = CGAffineTransformMakeScale(XMmainControllerScale, XMmainControllerScale);
     }
+}
+-(void)dealloc{
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 
 

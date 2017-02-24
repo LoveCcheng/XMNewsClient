@@ -10,7 +10,8 @@ NSString *XMLeftViewShowNotification = @"XMLeftViewShowNotification";
 /** 左边视图隐藏完毕的通知 */
 NSString *XMLeftViewHideNotification = @"XMLeftViewHideNotification";
 
-
+/** 左边视图点击选项的通知 */
+NSString *XMLeftViewSelectRowNotification = @"XMLeftViewSelectRowNotification";
 
 
 
