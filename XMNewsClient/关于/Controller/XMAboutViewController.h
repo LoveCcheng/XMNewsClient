@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XMAboutViewController : UIViewController
+@interface XMAboutViewController : XMBaseViewController
+
 
 @end

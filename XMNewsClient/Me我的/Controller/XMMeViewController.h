@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XMMeViewController : UIViewController
+@interface XMMeViewController : XMBaseViewController
 
 @end

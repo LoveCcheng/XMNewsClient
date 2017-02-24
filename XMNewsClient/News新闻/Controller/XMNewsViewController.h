@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XMNewsViewController : UIViewController
+@interface XMNewsViewController : XMBaseViewController
 
 @end

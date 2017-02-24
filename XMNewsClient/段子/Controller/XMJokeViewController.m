@@ -1,26 +1,23 @@
 //
-//  XMNewsViewController.m
+//  XMJokeViewController.m
 //  XMNewsClient
 //
-//  Created by montnets on 2017/2/23.
+//  Created by montnets on 2017/2/24.
 //  Copyright © 2017年 montnets. All rights reserved.
 //
 
-#import "XMNewsViewController.h"
+#import "XMJokeViewController.h"
 
-@interface XMNewsViewController ()
+@interface XMJokeViewController ()
 
 @end
 
-@implementation XMNewsViewController
+@implementation XMJokeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"新闻";
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.view.backgroundColor = [UIColor blueColor];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

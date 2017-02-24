@@ -1,26 +1,24 @@
 //
-//  XMNewsViewController.m
+//  XMGoodsViewController.m
 //  XMNewsClient
 //
-//  Created by montnets on 2017/2/23.
+//  Created by montnets on 2017/2/24.
 //  Copyright © 2017年 montnets. All rights reserved.
 //
 
-#import "XMNewsViewController.h"
+#import "XMGoodsViewController.h"
 
-@interface XMNewsViewController ()
+@interface XMGoodsViewController ()
 
 @end
 
-@implementation XMNewsViewController
+@implementation XMGoodsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"新闻";
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.view.backgroundColor = [UIColor redColor];
+    // Do any additional setup after loading the view.
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -21,6 +21,11 @@
 #define XManimatedTimeDuration 0.5
 
 @interface XMSideViewController ()
+{
+    //全局变量，用来记录页面的活动。保证点击和滑动的效果一直存在
+    BOOL isClick;
+}
+
 
 @end
 
@@ -43,7 +48,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    isClick = NO;
     self.view.backgroundColor=[UIColor whiteColor];
     
     //3建立关联
@@ -58,18 +63,27 @@
     //2添加拖动手势
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureRecognizerhandel:)];
     [_MainViewController.view addGestureRecognizer:panGesture];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemClickNot) name:@"itemClick" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemClickNot) name:XMLeftItemClickNoti object:nil];
 }
-
+/** 点击导航栏左边按钮对应的处理 */
 -(void)itemClickNot{
-    [self clickHandle];
-}
--(void)clickHandle{
-    [UIView animateWithDuration:XManimatedTimeDuration animations:^{
-        _MainViewController.view.transform = CGAffineTransformMakeScale(XMmainControllerScale, XMmainControllerScale);
-        _MainViewController.view.X = self.view.width - XMmainControllerSpace;
-    }];
+    isClick = !isClick;
+    if (isClick) {
+        [UIView animateWithDuration:XManimatedTimeDuration animations:^{
+            _MainViewController.view.transform = CGAffineTransformMakeScale(XMmainControllerScale, XMmainControllerScale);
+            _MainViewController.view.X = self.view.width - XMmainControllerSpace;
+        } completion:^(BOOL finished) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewShowNotification object:nil];
+        }];
+    }else{
+        [UIView animateWithDuration:XManimatedTimeDuration animations:^{
+            _MainViewController.view.transform = CGAffineTransformMakeScale(XMmainControllerScale, XMmainControllerScale);
+            _MainViewController.view.X =0;
+        } completion:^(BOOL finished) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewHideNotification object:nil];
+        }];
+    }
 }
 
 /** 处理拖动手势 */
@@ -143,6 +157,7 @@
 }
 - (void)hiddenLeftViewController:(BOOL)animated
 {
+    isClick = !isClick;
     //动画
     if (animated)
     {
@@ -151,6 +166,8 @@
             _MainViewController.view.transform = CGAffineTransformMakeScale(1.0, 1.0);
             _MainViewController.view.X = 0;
             
+        } completion:^(BOOL finished) {
+             [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewHideNotification object:nil];
         }];
     }
     else
@@ -161,15 +178,17 @@
     }
 }
 
-
 - (void)showLeftViewController:(BOOL)animated
 {
+    isClick = !isClick;
     if (animated)
     {
         [UIView animateWithDuration:XManimatedTimeDuration animations:^{
             
             _MainViewController.view.transform = CGAffineTransformMakeScale(XMmainControllerScale, XMmainControllerScale);
             _MainViewController.view.X = self.view.width - XMmainControllerSpace;
+        } completion:^(BOOL finished) {
+             [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewShowNotification object:nil];
         }];
     }
     else
@@ -210,6 +229,12 @@ static char key;
         return objc_getAssociatedObject(self, &key);
     }
     
+}
+
+-(void)dealloc{
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
 }
 
 

@@ -16,6 +16,12 @@
 		FC1EAA9C1E5EE1C800DA1DE3 /* XMNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1EAA9B1E5EE1C800DA1DE3 /* XMNewsViewController.m */; };
 		FC1EAA9F1E5EE1DA00DA1DE3 /* XMMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1EAA9E1E5EE1DA00DA1DE3 /* XMMeViewController.m */; };
 		FC1EAAA21E5EE1EA00DA1DE3 /* XMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1EAAA11E5EE1EA00DA1DE3 /* XMAboutViewController.m */; };
+		FC8DC5881E5FC43800F8067A /* XMGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5871E5FC43800F8067A /* XMGoodsViewController.m */; };
+		FC8DC58B1E5FC4AA00F8067A /* XMJokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC58A1E5FC4AA00F8067A /* XMJokeViewController.m */; };
+		FC8DC58E1E5FC71D00F8067A /* XMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC58D1E5FC71D00F8067A /* XMNavigationViewController.m */; };
+		FC8DC5911E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5901E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m */; };
+		FC8DC5941E5FCEC500F8067A /* XMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5931E5FCEC500F8067A /* XMBaseViewController.m */; };
+		FC8DC59A1E5FD0D600F8067A /* XMConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5991E5FD0D600F8067A /* XMConst.m */; };
 		FCAF3D531E5EC68600003B9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAF3D521E5EC68600003B9B /* main.m */; };
 		FCAF3D591E5EC68600003B9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAF3D581E5EC68600003B9B /* ViewController.m */; };
 		FCAF3D5C1E5EC68600003B9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCAF3D5A1E5EC68600003B9B /* Main.storyboard */; };
@@ -61,6 +67,18 @@
 		FC1EAA9E1E5EE1DA00DA1DE3 /* XMMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMeViewController.m; sourceTree = "<group>"; };
 		FC1EAAA01E5EE1EA00DA1DE3 /* XMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMAboutViewController.h; sourceTree = "<group>"; };
 		FC1EAAA11E5EE1EA00DA1DE3 /* XMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMAboutViewController.m; sourceTree = "<group>"; };
+		FC8DC5861E5FC43800F8067A /* XMGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGoodsViewController.h; sourceTree = "<group>"; };
+		FC8DC5871E5FC43800F8067A /* XMGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGoodsViewController.m; sourceTree = "<group>"; };
+		FC8DC5891E5FC4AA00F8067A /* XMJokeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMJokeViewController.h; sourceTree = "<group>"; };
+		FC8DC58A1E5FC4AA00F8067A /* XMJokeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMJokeViewController.m; sourceTree = "<group>"; };
+		FC8DC58C1E5FC71D00F8067A /* XMNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNavigationViewController.h; sourceTree = "<group>"; };
+		FC8DC58D1E5FC71D00F8067A /* XMNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMNavigationViewController.m; sourceTree = "<group>"; };
+		FC8DC58F1E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+XMBaritem.h"; sourceTree = "<group>"; };
+		FC8DC5901E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+XMBaritem.m"; sourceTree = "<group>"; };
+		FC8DC5921E5FCEC500F8067A /* XMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMBaseViewController.h; sourceTree = "<group>"; };
+		FC8DC5931E5FCEC500F8067A /* XMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMBaseViewController.m; sourceTree = "<group>"; };
+		FC8DC5981E5FD0D600F8067A /* XMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMConst.h; sourceTree = "<group>"; };
+		FC8DC5991E5FD0D600F8067A /* XMConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMConst.m; sourceTree = "<group>"; };
 		FCAF3D4E1E5EC68600003B9B /* XMNewsClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMNewsClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAF3D521E5EC68600003B9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FCAF3D571E5EC68600003B9B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -125,6 +143,10 @@
 			children = (
 				FC1EAA741E5ECD2B00DA1DE3 /* XMTabBarController.h */,
 				FC1EAA751E5ECD2B00DA1DE3 /* XMTabBarController.m */,
+				FC8DC58C1E5FC71D00F8067A /* XMNavigationViewController.h */,
+				FC8DC58D1E5FC71D00F8067A /* XMNavigationViewController.m */,
+				FC8DC5921E5FCEC500F8067A /* XMBaseViewController.h */,
+				FC8DC5931E5FCEC500F8067A /* XMBaseViewController.m */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -134,6 +156,8 @@
 			children = (
 				FC1EAA7B1E5EDAA000DA1DE3 /* UIView+XMframe.h */,
 				FC1EAA7C1E5EDAA100DA1DE3 /* UIView+XMframe.m */,
+				FC8DC58F1E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.h */,
+				FC8DC5901E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m */,
 			);
 			path = "Gategory分类";
 			sourceTree = "<group>";
@@ -143,6 +167,8 @@
 			children = (
 				FC1EAA7F1E5EDADC00DA1DE3 /* Foundation+Log.m */,
 				FC1EAA801E5EDADC00DA1DE3 /* PrefixHeader.pch */,
+				FC8DC5981E5FD0D600F8067A /* XMConst.h */,
+				FC8DC5991E5FD0D600F8067A /* XMConst.m */,
 			);
 			path = "Tool工具类";
 			sourceTree = "<group>";
@@ -169,6 +195,8 @@
 		FC1EAA871E5EE1A800DA1DE3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FC8DC5891E5FC4AA00F8067A /* XMJokeViewController.h */,
+				FC8DC58A1E5FC4AA00F8067A /* XMJokeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,37 +242,6 @@
 			sourceTree = "<group>";
 		};
 		FC1EAA8D1E5EE1A800DA1DE3 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		FC1EAA8E1E5EE1A800DA1DE3 /* Game游戏 */ = {
-			isa = PBXGroup;
-			children = (
-				FC1EAA8F1E5EE1A800DA1DE3 /* Controller */,
-				FC1EAA901E5EE1A800DA1DE3 /* model */,
-				FC1EAA911E5EE1A800DA1DE3 /* view */,
-			);
-			path = "Game游戏";
-			sourceTree = "<group>";
-		};
-		FC1EAA8F1E5EE1A800DA1DE3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		FC1EAA901E5EE1A800DA1DE3 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		FC1EAA911E5EE1A800DA1DE3 /* view */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -317,6 +314,39 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		FC8DC5821E5FC3BE00F8067A /* Goods商品 */ = {
+			isa = PBXGroup;
+			children = (
+				FC8DC5831E5FC3BE00F8067A /* Controller */,
+				FC8DC5841E5FC3BE00F8067A /* model */,
+				FC8DC5851E5FC3BE00F8067A /* view */,
+			);
+			path = "Goods商品";
+			sourceTree = "<group>";
+		};
+		FC8DC5831E5FC3BE00F8067A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FC8DC5861E5FC43800F8067A /* XMGoodsViewController.h */,
+				FC8DC5871E5FC43800F8067A /* XMGoodsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FC8DC5841E5FC3BE00F8067A /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		FC8DC5851E5FC3BE00F8067A /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		FCAF3D451E5EC68600003B9B = {
 			isa = PBXGroup;
 			children = (
@@ -340,9 +370,9 @@
 		FCAF3D501E5EC68600003B9B /* XMNewsClient */ = {
 			isa = PBXGroup;
 			children = (
+				FC8DC5821E5FC3BE00F8067A /* Goods商品 */,
 				FC1EAA861E5EE1A800DA1DE3 /* 段子 */,
 				FC1EAA8A1E5EE1A800DA1DE3 /* 关于 */,
-				FC1EAA8E1E5EE1A800DA1DE3 /* Game游戏 */,
 				FC1EAA921E5EE1A800DA1DE3 /* Me我的 */,
 				FC1EAA961E5EE1A800DA1DE3 /* News新闻 */,
 				FC1EAA821E5EDD8F00DA1DE3 /* XMsideViewController */,
@@ -522,17 +552,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC8DC5941E5FCEC500F8067A /* XMBaseViewController.m in Sources */,
+				FC8DC58B1E5FC4AA00F8067A /* XMJokeViewController.m in Sources */,
 				FC1EAA6E1E5ECAB100DA1DE3 /* XMLeftViewController.m in Sources */,
 				FC1EAA6A1E5EC98A00DA1DE3 /* AppDelegate.m in Sources */,
 				FC1EAA9C1E5EE1C800DA1DE3 /* XMNewsViewController.m in Sources */,
 				FC1EAA9F1E5EE1DA00DA1DE3 /* XMMeViewController.m in Sources */,
 				FC1EAA761E5ECD2B00DA1DE3 /* XMTabBarController.m in Sources */,
 				FC1EAAA21E5EE1EA00DA1DE3 /* XMAboutViewController.m in Sources */,
+				FC8DC58E1E5FC71D00F8067A /* XMNavigationViewController.m in Sources */,
+				FC8DC5881E5FC43800F8067A /* XMGoodsViewController.m in Sources */,
 				FC1EAA811E5EDADC00DA1DE3 /* Foundation+Log.m in Sources */,
 				FCAF3D591E5EC68600003B9B /* ViewController.m in Sources */,
+				FC8DC5911E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m in Sources */,
 				FCAF3D531E5EC68600003B9B /* main.m in Sources */,
 				FC1EAA851E5EDD8F00DA1DE3 /* XMSideViewController.m in Sources */,
 				FC1EAA7D1E5EDAA100DA1DE3 /* UIView+XMframe.m in Sources */,
+				FC8DC59A1E5FD0D600F8067A /* XMConst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
