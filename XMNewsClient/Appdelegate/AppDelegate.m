@@ -28,8 +28,9 @@
     XMTabBarController *tabbarVC = [[XMTabBarController alloc]init];
     
     XMSideViewController *sideVC = [XMSideViewController SideViewControllerWithLeftController:leftVC andMainController:tabbarVC];
-
     
+    
+
     self.window.rootViewController = sideVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyWindow];

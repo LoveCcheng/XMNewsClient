@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = @"商品";
 }
 
 - (void)didReceiveMemoryWarning {

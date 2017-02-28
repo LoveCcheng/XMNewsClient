@@ -26,7 +26,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.oneArr = @[@"新闻",@"段子",@"关于",@"我的"];
-    self.twoArr = @[@"夜间模式",@"清除缓存",@"联系我们"];
+    self.twoArr = @[@"夜间模式",@"清除缓存",@"联系我们",@"更换主题"];
     
     [self CreateTopView];
     
@@ -52,7 +52,7 @@
 }
 
 -(void)createTableView{
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 150, XMScreenW - 100, 300) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 150, XMScreenW - 100, 320) style:UITableViewStylePlain];
     tableView.delegate  =self;
     tableView.dataSource = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -118,18 +118,41 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    XMLogFun;
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[@"index"] = [NSString stringWithFormat:@"%ld",indexPath.row];
     if (indexPath.section == 0) {
         [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewSelectRowNotification object:dict];
+    }else{
+        if (indexPath.row == 0) {
+            [XMOpreation saveInfo:@"night" WithKey:XMkey];
+            //把key传出去
+            [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewNightTypeNotification object:nil];
+        }
     }
 }
 -(void)dealloc{
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

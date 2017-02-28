@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    self.navigationItem.title = @"段子";
 }
 
 - (void)didReceiveMemoryWarning {

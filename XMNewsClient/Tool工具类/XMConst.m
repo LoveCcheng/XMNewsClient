@@ -13,6 +13,8 @@ NSString *XMLeftViewHideNotification = @"XMLeftViewHideNotification";
 /** 左边视图点击选项的通知 */
 NSString *XMLeftViewSelectRowNotification = @"XMLeftViewSelectRowNotification";
 
+/** 左边视图的夜间模式功能 */
+NSString *XMLeftViewNightTypeNotification = @"XMLeftViewNightTypeNotification";
 
 
 

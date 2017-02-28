@@ -13,6 +13,8 @@ UIKIT_EXTERN NSString *XMLeftViewHideNotification;
 /** 左边视图点击选项的通知 */
 UIKIT_EXTERN NSString *XMLeftViewSelectRowNotification;
 
+/** 左边视图的夜间模式功能 */
+UIKIT_EXTERN NSString *XMLeftViewNightTypeNotification;
 
 
 

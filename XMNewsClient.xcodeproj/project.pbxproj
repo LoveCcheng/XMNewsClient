@@ -22,6 +22,8 @@
 		FC8DC5911E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5901E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m */; };
 		FC8DC5941E5FCEC500F8067A /* XMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5931E5FCEC500F8067A /* XMBaseViewController.m */; };
 		FC8DC59A1E5FD0D600F8067A /* XMConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5991E5FD0D600F8067A /* XMConst.m */; };
+		FCA56B921E63D48500BE8EC5 /* skins in Resources */ = {isa = PBXBuildFile; fileRef = FCA56B911E63D48400BE8EC5 /* skins */; };
+		FCA56B951E63FBC900BE8EC5 /* XMOpreation.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA56B941E63FBC900BE8EC5 /* XMOpreation.m */; };
 		FCAF3D531E5EC68600003B9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAF3D521E5EC68600003B9B /* main.m */; };
 		FCAF3D591E5EC68600003B9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAF3D581E5EC68600003B9B /* ViewController.m */; };
 		FCAF3D5C1E5EC68600003B9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCAF3D5A1E5EC68600003B9B /* Main.storyboard */; };
@@ -79,6 +81,9 @@
 		FC8DC5931E5FCEC500F8067A /* XMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMBaseViewController.m; sourceTree = "<group>"; };
 		FC8DC5981E5FD0D600F8067A /* XMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMConst.h; sourceTree = "<group>"; };
 		FC8DC5991E5FD0D600F8067A /* XMConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMConst.m; sourceTree = "<group>"; };
+		FCA56B911E63D48400BE8EC5 /* skins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = skins; sourceTree = "<group>"; };
+		FCA56B931E63FBC900BE8EC5 /* XMOpreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMOpreation.h; sourceTree = "<group>"; };
+		FCA56B941E63FBC900BE8EC5 /* XMOpreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMOpreation.m; sourceTree = "<group>"; };
 		FCAF3D4E1E5EC68600003B9B /* XMNewsClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMNewsClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAF3D521E5EC68600003B9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FCAF3D571E5EC68600003B9B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -169,6 +174,8 @@
 				FC1EAA801E5EDADC00DA1DE3 /* PrefixHeader.pch */,
 				FC8DC5981E5FD0D600F8067A /* XMConst.h */,
 				FC8DC5991E5FD0D600F8067A /* XMConst.m */,
+				FCA56B931E63FBC900BE8EC5 /* XMOpreation.h */,
+				FCA56B941E63FBC900BE8EC5 /* XMOpreation.m */,
 			);
 			path = "Tool工具类";
 			sourceTree = "<group>";
@@ -395,6 +402,7 @@
 		FCAF3D511E5EC68600003B9B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCA56B911E63D48400BE8EC5 /* skins */,
 				FCAF3D521E5EC68600003B9B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -526,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCAF3D611E5EC68600003B9B /* LaunchScreen.storyboard in Resources */,
+				FCA56B921E63D48500BE8EC5 /* skins in Resources */,
 				FCAF3D5E1E5EC68600003B9B /* Assets.xcassets in Resources */,
 				FCAF3D5C1E5EC68600003B9B /* Main.storyboard in Resources */,
 			);
@@ -566,6 +575,7 @@
 				FCAF3D591E5EC68600003B9B /* ViewController.m in Sources */,
 				FC8DC5911E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m in Sources */,
 				FCAF3D531E5EC68600003B9B /* main.m in Sources */,
+				FCA56B951E63FBC900BE8EC5 /* XMOpreation.m in Sources */,
 				FC1EAA851E5EDD8F00DA1DE3 /* XMSideViewController.m in Sources */,
 				FC1EAA7D1E5EDAA100DA1DE3 /* UIView+XMframe.m in Sources */,
 				FC8DC59A1E5FD0D600F8067A /* XMConst.m in Sources */,

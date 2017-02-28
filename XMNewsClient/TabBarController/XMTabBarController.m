@@ -25,34 +25,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    //设置控制器的view的背景颜色    
+    self.tabBar.barTintColor =[XMOpreation ColorWithKey:XMkey];
+    
     [self AddChildController];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickConplete) name:XMLeftViewShowNotification object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickConplete) name:XMLeftViewShowNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickConpleteNO) name:XMLeftViewHideNotification object:nil];
-    
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickConpleteNO) name:XMLeftViewHideNotification object:nil];
+    //切换控制器
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectIndex:) name:XMLeftViewSelectRowNotification object:nil];
     
-    
+    //夜间模式的
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ChangeNightType) name:XMLeftViewNightTypeNotification object:nil];
 }
+
+-(void)ChangeNightType{
+    UIColor *bgColor = [XMOpreation ColorWithKey:XMkey];
+    //设置颜色
+    [self.tabBar setBarTintColor:bgColor];
+}
+
 -(void)selectIndex:(NSNotification *)noti{
     NSDictionary *dict = noti.object;
     self.selectedIndex = [dict[@"index"] integerValue];
 }
-
--(void)clickConplete{
-    [self addVIew];
-    [UIView animateWithDuration:0.5 animations:^{
-        self.hideView.alpha = 0.5;
-    }];
-}
--(void)clickConpleteNO{
-    [UIView animateWithDuration:0.5 animations:^{
-        self.hideView.alpha = 0;
-    }];
-    [self.hideView removeFromSuperview];
-}
+//-(void)clickConplete{
+//    [self addVIew];
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.hideView.alpha = 0.5;
+//    }];
+//}
+//-(void)clickConpleteNO{
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.hideView.alpha = 0;
+//    }];
+//    [self.hideView removeFromSuperview];
+//}
 /** 添加自控制器 */
 -(void)AddChildController{
     XMNewsViewController *newsVC = [[XMNewsViewController alloc]init];
@@ -85,23 +94,19 @@
     return imageModel;
 }
 /** 添加灰色的蒙版 */
--(void)addVIew{
-    UIView *view = [[UIView alloc]init];
-    view.frame = CGRectMake(0, 64, XMScreenW, XMScreenH);
-    view.backgroundColor = [UIColor grayColor];
-    view.alpha=0;
-    self.hideView = view;
-    [self.view addSubview:view];
-}
+//-(void)addVIew{
+//    UIView *view = [[UIView alloc]init];
+//    view.frame = CGRectMake(0, 64, XMScreenW, XMScreenH);
+//    view.backgroundColor = [UIColor grayColor];
+//    view.alpha=0;
+//    self.hideView = view;
+//    [self.view addSubview:view];
+//}
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
-
-
-
-
 
 
 
