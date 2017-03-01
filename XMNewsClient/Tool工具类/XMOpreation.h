@@ -25,4 +25,11 @@
 /** 判断程序是不是第一次进入 */
 +(BOOL)AppDelegateIsFrist;
 
+/** 从服务器获取数据 */
++(void)getNewFormServce:(NSString *)str;
+
+/** 获取电影数据 */
++(void)getMovieFormServce;
+
+
 @end

@@ -21,4 +21,16 @@
     return item;
 }
 
++(UIBarButtonItem *)barButtonWithImage:(UIImage *)image SelectImage:(UIImage *)selectImage target:(id)target action:(SEL)action ConteollEvent:(UIControlEvents)controllEvent{
+    UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
+    [but setBackgroundImage:image forState:UIControlStateNormal];
+    [but setBackgroundImage:selectImage forState:UIControlStateSelected];
+    [but sizeToFit];
+    [but addTarget:target action:action forControlEvents:controllEvent];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:but];
+    return item;
+}
+
+
 @end

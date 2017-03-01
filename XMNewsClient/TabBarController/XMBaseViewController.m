@@ -16,9 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [XMOpreation ColorWithKey:XMkey];
     [self addbarItem];
-    //夜间模式的
+    //切换颜色模式的
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ChangeNightType) name:XMLeftViewNightTypeNotification object:nil];
 }
 /** 添加左边的按钮 */
@@ -30,10 +30,15 @@
 -(void)leftBarButtonItemClick{
     [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftItemClickNoti object:nil];
 }
-
 -(void)ChangeNightType{
     //设置颜色
     self.view.backgroundColor = [XMOpreation ColorWithKey:XMkey];
 }
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+}
+
 
 @end

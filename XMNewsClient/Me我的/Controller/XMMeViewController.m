@@ -17,21 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"我的";
+    [self setRightnavgiationBar];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)setRightnavgiationBar{
+    UIBarButtonItem *rightItem = [UIBarButtonItem barButtonWithImage:[UIImage imageNamed:@"mine-moon-icon"] HeightImage:[UIImage imageNamed:@"mine-moon-icon-click"] target:self action:@selector(RightBarClick) ConteollEvent:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)RightBarClick{
+    
+    NSString *str = [XMOpreation readInfoWithKey:XMkey];
+    if ([str isEqualToString:@"night"]) {
+        [XMOpreation saveInfo:@"white" WithKey:XMkey];
+    }else{
+        [XMOpreation saveInfo:@"night" WithKey:XMkey];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewNightTypeNotification object:nil];
 }
-*/
 
 @end

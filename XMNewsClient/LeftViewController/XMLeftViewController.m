@@ -17,6 +17,9 @@
 
 @property (nonatomic,strong) NSArray *twoArr;
 
+//显示颜色的视图
+@property (nonatomic,weak) UIView *showView;
+
 @end
 
 @implementation XMLeftViewController
@@ -26,7 +29,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.oneArr = @[@"新闻",@"段子",@"关于",@"我的"];
-    self.twoArr = @[@"夜间模式",@"清除缓存",@"联系我们",@"更换主题"];
+    self.twoArr = @[@"清除缓存",@"联系我们",@"更换主题"];
     
     [self CreateTopView];
     
@@ -123,25 +126,66 @@
     if (indexPath.section == 0) {
         [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewSelectRowNotification object:dict];
     }else{
-        if (indexPath.row == 0) {
-            [XMOpreation saveInfo:@"night" WithKey:XMkey];
-            //把key传出去
-            [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewNightTypeNotification object:nil];
+        if (indexPath.row == 2) {
+            [self addMidView];
         }
+        [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewSelectRowNotification object:nil];
     }
 }
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
+//颜色主体的点击按钮
+-(void)addMidView{
+    UIView *view = [[UIView alloc]init];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    view.backgroundColor = [UIColor lightGrayColor];
+    view.width = 150;
+    view.height = 150;
+    view.center = window.center;
+    view.alpha = 0.7;
+    [window insertSubview:view atIndex:9999];
+    self.showView = view;
+    CGFloat butWidth = view.width/3;
+    CGFloat butHeight = view.height/3;
+    for (int i=0; i<3; i++) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.X =i*butWidth;
+        button.Y =0;
+        button.width = butWidth;
+        button.height = butHeight;
+        button.tag=i+100;
+        if (i==0) {
+            button.backgroundColor = [UIColor redColor];
+        }else if (i==1){
+            button.backgroundColor = [UIColor greenColor];
+        }else{
+            button.backgroundColor = [UIColor orangeColor];
+        }
+        [view addSubview:button];
+        
+        [button addTarget:self action:@selector(ModelbuttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
 
-
-
-
-
-
-
-
+-(void)ModelbuttonClick:(UIButton *)but{
+    if (but.tag == 100) {
+        [XMOpreation saveInfo:@"red" WithKey:XMkey];
+    }else if(but.tag == 101){
+        [XMOpreation saveInfo:@"green" WithKey:XMkey];
+    }else{
+        [XMOpreation saveInfo:@"orange" WithKey:XMkey];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:XMLeftViewNightTypeNotification object:nil];
+    
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.5 animations:^{
+        weakSelf.showView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [weakSelf.showView removeFromSuperview];
+    }];
+}
 
 
 

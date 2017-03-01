@@ -16,7 +16,8 @@ UIKIT_EXTERN NSString *XMLeftViewSelectRowNotification;
 /** 左边视图的夜间模式功能 */
 UIKIT_EXTERN NSString *XMLeftViewNightTypeNotification;
 
-
+/** 获取电影数据的通知 */
+UIKIT_EXTERN NSString *XMMovieDataNotification;
 
 
 

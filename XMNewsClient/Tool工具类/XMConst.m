@@ -17,6 +17,10 @@ NSString *XMLeftViewSelectRowNotification = @"XMLeftViewSelectRowNotification";
 NSString *XMLeftViewNightTypeNotification = @"XMLeftViewNightTypeNotification";
 
 
+/** 获取电影数据的通知 */
+NSString *XMMovieDataNotification = @"XMMovieDataNotification";
+
+
 
 
 

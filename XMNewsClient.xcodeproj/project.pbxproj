@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A8A0D2E3F22B599E44FF350 /* libPods-XMNewsClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AB982D0A658AE212CB912C /* libPods-XMNewsClient.a */; };
 		FC1EAA6A1E5EC98A00DA1DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1EAA691E5EC98A00DA1DE3 /* AppDelegate.m */; };
 		FC1EAA6E1E5ECAB100DA1DE3 /* XMLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1EAA6D1E5ECAB100DA1DE3 /* XMLeftViewController.m */; };
 		FC1EAA761E5ECD2B00DA1DE3 /* XMTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1EAA751E5ECD2B00DA1DE3 /* XMTabBarController.m */; };
@@ -16,6 +17,10 @@
 		FC1EAA9C1E5EE1C800DA1DE3 /* XMNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1EAA9B1E5EE1C800DA1DE3 /* XMNewsViewController.m */; };
 		FC1EAA9F1E5EE1DA00DA1DE3 /* XMMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1EAA9E1E5EE1DA00DA1DE3 /* XMMeViewController.m */; };
 		FC1EAAA21E5EE1EA00DA1DE3 /* XMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1EAAA11E5EE1EA00DA1DE3 /* XMAboutViewController.m */; };
+		FC7F974B1E669B44009C3316 /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = FC7F974A1E669B43009C3316 /* product.json */; };
+		FC7F97511E66A89E009C3316 /* XMMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F97501E66A89E009C3316 /* XMMovieModel.m */; };
+		FC7F97541E66B07C009C3316 /* XMMovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F97531E66B07C009C3316 /* XMMovieCollectionCell.m */; };
+		FC8B59F11E6518EA00A4445E /* XMHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B59F01E6518EA00A4445E /* XMHttpRequest.m */; };
 		FC8DC5881E5FC43800F8067A /* XMGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5871E5FC43800F8067A /* XMGoodsViewController.m */; };
 		FC8DC58B1E5FC4AA00F8067A /* XMJokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC58A1E5FC4AA00F8067A /* XMJokeViewController.m */; };
 		FC8DC58E1E5FC71D00F8067A /* XMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC58D1E5FC71D00F8067A /* XMNavigationViewController.m */; };
@@ -51,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17AB982D0A658AE212CB912C /* libPods-XMNewsClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMNewsClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34C649D0DDB7FC66C577F255 /* Pods-XMNewsClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMNewsClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XMNewsClient/Pods-XMNewsClient.debug.xcconfig"; sourceTree = "<group>"; };
+		CA2FDACA948F94D0ACDE27EF /* Pods-XMNewsClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMNewsClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-XMNewsClient/Pods-XMNewsClient.release.xcconfig"; sourceTree = "<group>"; };
 		FC1EAA681E5EC98A00DA1DE3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC1EAA691E5EC98A00DA1DE3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FC1EAA6C1E5ECAB100DA1DE3 /* XMLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLeftViewController.h; sourceTree = "<group>"; };
@@ -69,6 +77,13 @@
 		FC1EAA9E1E5EE1DA00DA1DE3 /* XMMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMeViewController.m; sourceTree = "<group>"; };
 		FC1EAAA01E5EE1EA00DA1DE3 /* XMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMAboutViewController.h; sourceTree = "<group>"; };
 		FC1EAAA11E5EE1EA00DA1DE3 /* XMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMAboutViewController.m; sourceTree = "<group>"; };
+		FC7F974A1E669B43009C3316 /* product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product.json; sourceTree = "<group>"; };
+		FC7F974F1E66A89E009C3316 /* XMMovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMovieModel.h; sourceTree = "<group>"; };
+		FC7F97501E66A89E009C3316 /* XMMovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMovieModel.m; sourceTree = "<group>"; };
+		FC7F97521E66B07C009C3316 /* XMMovieCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMovieCollectionCell.h; sourceTree = "<group>"; };
+		FC7F97531E66B07C009C3316 /* XMMovieCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMovieCollectionCell.m; sourceTree = "<group>"; };
+		FC8B59EF1E6518EA00A4445E /* XMHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMHttpRequest.h; sourceTree = "<group>"; };
+		FC8B59F01E6518EA00A4445E /* XMHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMHttpRequest.m; sourceTree = "<group>"; };
 		FC8DC5861E5FC43800F8067A /* XMGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGoodsViewController.h; sourceTree = "<group>"; };
 		FC8DC5871E5FC43800F8067A /* XMGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGoodsViewController.m; sourceTree = "<group>"; };
 		FC8DC5891E5FC4AA00F8067A /* XMJokeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMJokeViewController.h; sourceTree = "<group>"; };
@@ -105,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8A0D2E3F22B599E44FF350 /* libPods-XMNewsClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +141,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65F1D312D596FA09F4441D2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34C649D0DDB7FC66C577F255 /* Pods-XMNewsClient.debug.xcconfig */,
+				CA2FDACA948F94D0ACDE27EF /* Pods-XMNewsClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F6BF09CF0B6DCB0A2C47B91E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17AB982D0A658AE212CB912C /* libPods-XMNewsClient.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC1EAA671E5EC98A00DA1DE3 /* Appdelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +209,8 @@
 				FC8DC5991E5FD0D600F8067A /* XMConst.m */,
 				FCA56B931E63FBC900BE8EC5 /* XMOpreation.h */,
 				FCA56B941E63FBC900BE8EC5 /* XMOpreation.m */,
+				FC8B59EF1E6518EA00A4445E /* XMHttpRequest.h */,
+				FC8B59F01E6518EA00A4445E /* XMHttpRequest.m */,
 			);
 			path = "Tool工具类";
 			sourceTree = "<group>";
@@ -244,6 +279,8 @@
 		FC1EAA8C1E5EE1A800DA1DE3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FC7F974F1E66A89E009C3316 /* XMMovieModel.h */,
+				FC7F97501E66A89E009C3316 /* XMMovieModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -251,6 +288,8 @@
 		FC1EAA8D1E5EE1A800DA1DE3 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FC7F97521E66B07C009C3316 /* XMMovieCollectionCell.h */,
+				FC7F97531E66B07C009C3316 /* XMMovieCollectionCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -361,6 +400,8 @@
 				FCAF3D6A1E5EC68600003B9B /* XMNewsClientTests */,
 				FCAF3D751E5EC68600003B9B /* XMNewsClientUITests */,
 				FCAF3D4F1E5EC68600003B9B /* Products */,
+				65F1D312D596FA09F4441D2D /* Pods */,
+				F6BF09CF0B6DCB0A2C47B91E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -393,6 +434,7 @@
 				FCAF3D5A1E5EC68600003B9B /* Main.storyboard */,
 				FCAF3D5D1E5EC68600003B9B /* Assets.xcassets */,
 				FCAF3D5F1E5EC68600003B9B /* LaunchScreen.storyboard */,
+				FC7F974A1E669B43009C3316 /* product.json */,
 				FCAF3D621E5EC68600003B9B /* Info.plist */,
 				FCAF3D511E5EC68600003B9B /* Supporting Files */,
 			);
@@ -433,9 +475,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCAF3D7B1E5EC68600003B9B /* Build configuration list for PBXNativeTarget "XMNewsClient" */;
 			buildPhases = (
+				F0F5F61E30ADE43E3F0ACE01 /* [CP] Check Pods Manifest.lock */,
 				FCAF3D4A1E5EC68600003B9B /* Sources */,
 				FCAF3D4B1E5EC68600003B9B /* Frameworks */,
 				FCAF3D4C1E5EC68600003B9B /* Resources */,
+				BB02F830C8BCE2C60F56C9C7 /* [CP] Embed Pods Frameworks */,
+				CF485680034140CF27B45763 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -537,6 +582,7 @@
 				FCA56B921E63D48500BE8EC5 /* skins in Resources */,
 				FCAF3D5E1E5EC68600003B9B /* Assets.xcassets in Resources */,
 				FCAF3D5C1E5EC68600003B9B /* Main.storyboard in Resources */,
+				FC7F974B1E669B44009C3316 /* product.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +602,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BB02F830C8BCE2C60F56C9C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XMNewsClient/Pods-XMNewsClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF485680034140CF27B45763 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XMNewsClient/Pods-XMNewsClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0F5F61E30ADE43E3F0ACE01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FCAF3D4A1E5EC68600003B9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -565,13 +659,16 @@
 				FC8DC58B1E5FC4AA00F8067A /* XMJokeViewController.m in Sources */,
 				FC1EAA6E1E5ECAB100DA1DE3 /* XMLeftViewController.m in Sources */,
 				FC1EAA6A1E5EC98A00DA1DE3 /* AppDelegate.m in Sources */,
+				FC7F97541E66B07C009C3316 /* XMMovieCollectionCell.m in Sources */,
 				FC1EAA9C1E5EE1C800DA1DE3 /* XMNewsViewController.m in Sources */,
 				FC1EAA9F1E5EE1DA00DA1DE3 /* XMMeViewController.m in Sources */,
 				FC1EAA761E5ECD2B00DA1DE3 /* XMTabBarController.m in Sources */,
+				FC7F97511E66A89E009C3316 /* XMMovieModel.m in Sources */,
 				FC1EAAA21E5EE1EA00DA1DE3 /* XMAboutViewController.m in Sources */,
 				FC8DC58E1E5FC71D00F8067A /* XMNavigationViewController.m in Sources */,
 				FC8DC5881E5FC43800F8067A /* XMGoodsViewController.m in Sources */,
 				FC1EAA811E5EDADC00DA1DE3 /* Foundation+Log.m in Sources */,
+				FC8B59F11E6518EA00A4445E /* XMHttpRequest.m in Sources */,
 				FCAF3D591E5EC68600003B9B /* ViewController.m in Sources */,
 				FC8DC5911E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m in Sources */,
 				FCAF3D531E5EC68600003B9B /* main.m in Sources */,
@@ -725,6 +822,7 @@
 		};
 		FCAF3D7C1E5EC68600003B9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34C649D0DDB7FC66C577F255 /* Pods-XMNewsClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XMNewsClient/Tool工具类/PrefixHeader.pch";
@@ -738,6 +836,7 @@
 		};
 		FCAF3D7D1E5EC68600003B9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA2FDACA948F94D0ACDE27EF /* Pods-XMNewsClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XMNewsClient/Tool工具类/PrefixHeader.pch";

@@ -7,7 +7,13 @@
 //
 
 #import "XMOpreation.h"
+#import "XMHttpRequest.h"
 
+#define HTTP_NEWS @"http://v.juhe.cn/toutiao/index"
+#define HTTP_KEY @"15acbd82bc3becf4d919d3f538907f44"
+
+
+#define HTTP_MOVIE @"https://api.douban.com/v2/movie/top250"
 @implementation XMOpreation
 
 
@@ -25,7 +31,6 @@
     NSString *Value = [defaults stringForKey:key];
     return Value;
 }
-
 /** 通过key取出来plist文件里面的内容 */
 +(NSArray *)readInfoFormPlist:(NSString *)key{
     NSString *dir = [XMOpreation readInfoWithKey:key];
@@ -33,23 +38,20 @@
     NSString *path = [NSString stringWithFormat:@"skins/%@/%@",dir,plist];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:path ofType:nil]];
     //按逗号分隔字符串
-    NSArray *strArr = [dict[key] componentsSeparatedByString:@","];
+    NSArray *strArr = [dict[dir] componentsSeparatedByString:@","];
     return strArr;
 }
 
 /** 通过key得到颜色 */
 +(UIColor *)ColorWithKey:(NSString *)key{
-    //得到key
-    NSString *keyStr = [XMOpreation readInfoWithKey:XMkey];
     if ([XMOpreation AppDelegateIsFrist]) {
-        keyStr = XMkey;
+        [XMOpreation saveInfo:@"white" WithKey:key];
     }
     //获取plist里面颜色值的字符串
-    NSArray *colorArr = [XMOpreation readInfoFormPlist:keyStr];
+    NSArray *colorArr = [XMOpreation readInfoFormPlist:key];
     NSInteger oneColor = [colorArr[0] integerValue];
     NSInteger TwoColor = [colorArr[1] integerValue];
     NSInteger ThreeColor = [colorArr[2] integerValue];
-    
     
     return XMrgbColors(oneColor, TwoColor, ThreeColor);
 }
@@ -64,11 +66,37 @@
     if (![currentVersion isEqualToString:lastVersion]) {
         //保存当前版本信息
         [XMOpreation saveInfo:currentVersion WithKey:XMVersion];
-        [XMOpreation saveInfo:@"red" WithKey:XMkey];
+        
         return YES;
     }
     return NO;
 }
+
+/** 从服务器获取数据 */
++(void)getNewFormServce:(NSString *)str{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"key"]=HTTP_KEY;
+    dict[@"type"] = @"top";
+    [[XMHttpRequest shareHttpRequest] beginHttpRequestWithUrl:HTTP_NEWS andParam:dict];
+}
+
+/** 获取电影数据 */
++(void)getMovieFormServce{
+    [[XMHttpRequest shareHttpRequest] beginHttpRequestWithUrl:HTTP_MOVIE andParam:nil];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
