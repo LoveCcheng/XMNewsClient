@@ -25,11 +25,14 @@
 /** 判断程序是不是第一次进入 */
 +(BOOL)AppDelegateIsFrist;
 
-/** 从服务器获取数据 */
-+(void)getNewFormServce:(NSString *)str;
+/** 从服务器获取新闻数据 */
++(void)getNewFormServce:(XMNewType)type;
 
 /** 获取电影数据 */
 +(void)getMovieFormServce;
+
+/** 获取历史上的今天的数据 */
++(void)getHistoryTodayDataFormServce;
 
 
 @end

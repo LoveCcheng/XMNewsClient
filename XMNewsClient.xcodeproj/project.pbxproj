@@ -20,6 +20,9 @@
 		FC7F974B1E669B44009C3316 /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = FC7F974A1E669B43009C3316 /* product.json */; };
 		FC7F97511E66A89E009C3316 /* XMMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F97501E66A89E009C3316 /* XMMovieModel.m */; };
 		FC7F97541E66B07C009C3316 /* XMMovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7F97531E66B07C009C3316 /* XMMovieCollectionCell.m */; };
+		FC8A9BA01E6909650060DFC9 /* XMHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8A9B9F1E6909650060DFC9 /* XMHistoryModel.m */; };
+		FC8A9BA31E6950D80060DFC9 /* XMWaterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8A9BA21E6950D80060DFC9 /* XMWaterLayout.m */; };
+		FC8A9BA61E6960810060DFC9 /* XMHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8A9BA51E6960810060DFC9 /* XMHistoryCell.m */; };
 		FC8B59F11E6518EA00A4445E /* XMHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B59F01E6518EA00A4445E /* XMHttpRequest.m */; };
 		FC8DC5881E5FC43800F8067A /* XMGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5871E5FC43800F8067A /* XMGoodsViewController.m */; };
 		FC8DC58B1E5FC4AA00F8067A /* XMJokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC58A1E5FC4AA00F8067A /* XMJokeViewController.m */; };
@@ -27,6 +30,12 @@
 		FC8DC5911E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5901E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m */; };
 		FC8DC5941E5FCEC500F8067A /* XMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5931E5FCEC500F8067A /* XMBaseViewController.m */; };
 		FC8DC59A1E5FD0D600F8067A /* XMConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8DC5991E5FD0D600F8067A /* XMConst.m */; };
+		FC99B48C1E67B11200CA8A82 /* XMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC99B48B1E67B11200CA8A82 /* XMMenuView.m */; };
+		FC99B48F1E67CDB700CA8A82 /* XMContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC99B48E1E67CDB700CA8A82 /* XMContentViewController.m */; };
+		FC99B4921E67F85A00CA8A82 /* XMNewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC99B4911E67F85A00CA8A82 /* XMNewModel.m */; };
+		FC99B4951E67FCAF00CA8A82 /* XMNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC99B4941E67FCAF00CA8A82 /* XMNewsCell.m */; };
+		FC99B4981E6814D900CA8A82 /* XMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC99B4971E6814D900CA8A82 /* XMWebViewController.m */; };
+		FC99B49B1E6835C200CA8A82 /* XMShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC99B49A1E6835C200CA8A82 /* XMShareView.m */; };
 		FCA56B921E63D48500BE8EC5 /* skins in Resources */ = {isa = PBXBuildFile; fileRef = FCA56B911E63D48400BE8EC5 /* skins */; };
 		FCA56B951E63FBC900BE8EC5 /* XMOpreation.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA56B941E63FBC900BE8EC5 /* XMOpreation.m */; };
 		FCAF3D531E5EC68600003B9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAF3D521E5EC68600003B9B /* main.m */; };
@@ -82,6 +91,12 @@
 		FC7F97501E66A89E009C3316 /* XMMovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMovieModel.m; sourceTree = "<group>"; };
 		FC7F97521E66B07C009C3316 /* XMMovieCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMovieCollectionCell.h; sourceTree = "<group>"; };
 		FC7F97531E66B07C009C3316 /* XMMovieCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMovieCollectionCell.m; sourceTree = "<group>"; };
+		FC8A9B9E1E6909650060DFC9 /* XMHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMHistoryModel.h; sourceTree = "<group>"; };
+		FC8A9B9F1E6909650060DFC9 /* XMHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMHistoryModel.m; sourceTree = "<group>"; };
+		FC8A9BA11E6950D80060DFC9 /* XMWaterLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMWaterLayout.h; sourceTree = "<group>"; };
+		FC8A9BA21E6950D80060DFC9 /* XMWaterLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMWaterLayout.m; sourceTree = "<group>"; };
+		FC8A9BA41E6960810060DFC9 /* XMHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMHistoryCell.h; sourceTree = "<group>"; };
+		FC8A9BA51E6960810060DFC9 /* XMHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMHistoryCell.m; sourceTree = "<group>"; };
 		FC8B59EF1E6518EA00A4445E /* XMHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMHttpRequest.h; sourceTree = "<group>"; };
 		FC8B59F01E6518EA00A4445E /* XMHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMHttpRequest.m; sourceTree = "<group>"; };
 		FC8DC5861E5FC43800F8067A /* XMGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGoodsViewController.h; sourceTree = "<group>"; };
@@ -96,6 +111,18 @@
 		FC8DC5931E5FCEC500F8067A /* XMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMBaseViewController.m; sourceTree = "<group>"; };
 		FC8DC5981E5FD0D600F8067A /* XMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMConst.h; sourceTree = "<group>"; };
 		FC8DC5991E5FD0D600F8067A /* XMConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMConst.m; sourceTree = "<group>"; };
+		FC99B48A1E67B11200CA8A82 /* XMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMenuView.h; sourceTree = "<group>"; };
+		FC99B48B1E67B11200CA8A82 /* XMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMenuView.m; sourceTree = "<group>"; };
+		FC99B48D1E67CDB700CA8A82 /* XMContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMContentViewController.h; sourceTree = "<group>"; };
+		FC99B48E1E67CDB700CA8A82 /* XMContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMContentViewController.m; sourceTree = "<group>"; };
+		FC99B4901E67F85A00CA8A82 /* XMNewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNewModel.h; sourceTree = "<group>"; };
+		FC99B4911E67F85A00CA8A82 /* XMNewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMNewModel.m; sourceTree = "<group>"; };
+		FC99B4931E67FCAF00CA8A82 /* XMNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNewsCell.h; sourceTree = "<group>"; };
+		FC99B4941E67FCAF00CA8A82 /* XMNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMNewsCell.m; sourceTree = "<group>"; };
+		FC99B4961E6814D900CA8A82 /* XMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMWebViewController.h; sourceTree = "<group>"; };
+		FC99B4971E6814D900CA8A82 /* XMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMWebViewController.m; sourceTree = "<group>"; };
+		FC99B4991E6835C200CA8A82 /* XMShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMShareView.h; sourceTree = "<group>"; };
+		FC99B49A1E6835C200CA8A82 /* XMShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMShareView.m; sourceTree = "<group>"; };
 		FCA56B911E63D48400BE8EC5 /* skins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = skins; sourceTree = "<group>"; };
 		FCA56B931E63FBC900BE8EC5 /* XMOpreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMOpreation.h; sourceTree = "<group>"; };
 		FCA56B941E63FBC900BE8EC5 /* XMOpreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMOpreation.m; sourceTree = "<group>"; };
@@ -246,6 +273,8 @@
 		FC1EAA881E5EE1A800DA1DE3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FC8A9B9E1E6909650060DFC9 /* XMHistoryModel.h */,
+				FC8A9B9F1E6909650060DFC9 /* XMHistoryModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -253,6 +282,10 @@
 		FC1EAA891E5EE1A800DA1DE3 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FC8A9BA11E6950D80060DFC9 /* XMWaterLayout.h */,
+				FC8A9BA21E6950D80060DFC9 /* XMWaterLayout.m */,
+				FC8A9BA41E6960810060DFC9 /* XMHistoryCell.h */,
+				FC8A9BA51E6960810060DFC9 /* XMHistoryCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -342,6 +375,10 @@
 			children = (
 				FC1EAA9A1E5EE1C800DA1DE3 /* XMNewsViewController.h */,
 				FC1EAA9B1E5EE1C800DA1DE3 /* XMNewsViewController.m */,
+				FC99B48D1E67CDB700CA8A82 /* XMContentViewController.h */,
+				FC99B48E1E67CDB700CA8A82 /* XMContentViewController.m */,
+				FC99B4961E6814D900CA8A82 /* XMWebViewController.h */,
+				FC99B4971E6814D900CA8A82 /* XMWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -349,6 +386,8 @@
 		FC1EAA981E5EE1A800DA1DE3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FC99B4901E67F85A00CA8A82 /* XMNewModel.h */,
+				FC99B4911E67F85A00CA8A82 /* XMNewModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -356,6 +395,12 @@
 		FC1EAA991E5EE1A800DA1DE3 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FC99B48A1E67B11200CA8A82 /* XMMenuView.h */,
+				FC99B48B1E67B11200CA8A82 /* XMMenuView.m */,
+				FC99B4931E67FCAF00CA8A82 /* XMNewsCell.h */,
+				FC99B4941E67FCAF00CA8A82 /* XMNewsCell.m */,
+				FC99B4991E6835C200CA8A82 /* XMShareView.h */,
+				FC99B49A1E6835C200CA8A82 /* XMShareView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -657,6 +702,9 @@
 			files = (
 				FC8DC5941E5FCEC500F8067A /* XMBaseViewController.m in Sources */,
 				FC8DC58B1E5FC4AA00F8067A /* XMJokeViewController.m in Sources */,
+				FC99B4981E6814D900CA8A82 /* XMWebViewController.m in Sources */,
+				FC99B48C1E67B11200CA8A82 /* XMMenuView.m in Sources */,
+				FC99B48F1E67CDB700CA8A82 /* XMContentViewController.m in Sources */,
 				FC1EAA6E1E5ECAB100DA1DE3 /* XMLeftViewController.m in Sources */,
 				FC1EAA6A1E5EC98A00DA1DE3 /* AppDelegate.m in Sources */,
 				FC7F97541E66B07C009C3316 /* XMMovieCollectionCell.m in Sources */,
@@ -668,14 +716,20 @@
 				FC8DC58E1E5FC71D00F8067A /* XMNavigationViewController.m in Sources */,
 				FC8DC5881E5FC43800F8067A /* XMGoodsViewController.m in Sources */,
 				FC1EAA811E5EDADC00DA1DE3 /* Foundation+Log.m in Sources */,
+				FC99B4921E67F85A00CA8A82 /* XMNewModel.m in Sources */,
+				FC99B4951E67FCAF00CA8A82 /* XMNewsCell.m in Sources */,
 				FC8B59F11E6518EA00A4445E /* XMHttpRequest.m in Sources */,
 				FCAF3D591E5EC68600003B9B /* ViewController.m in Sources */,
+				FC8A9BA31E6950D80060DFC9 /* XMWaterLayout.m in Sources */,
+				FC99B49B1E6835C200CA8A82 /* XMShareView.m in Sources */,
 				FC8DC5911E5FCD9A00F8067A /* UIBarButtonItem+XMBaritem.m in Sources */,
+				FC8A9BA61E6960810060DFC9 /* XMHistoryCell.m in Sources */,
 				FCAF3D531E5EC68600003B9B /* main.m in Sources */,
 				FCA56B951E63FBC900BE8EC5 /* XMOpreation.m in Sources */,
 				FC1EAA851E5EDD8F00DA1DE3 /* XMSideViewController.m in Sources */,
 				FC1EAA7D1E5EDAA100DA1DE3 /* UIView+XMframe.m in Sources */,
 				FC8DC59A1E5FD0D600F8067A /* XMConst.m in Sources */,
+				FC8A9BA01E6909650060DFC9 /* XMHistoryModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

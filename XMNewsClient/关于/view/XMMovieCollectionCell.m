@@ -14,15 +14,15 @@
     BOOL _ischangeone;
 }
 /** 图片*/
-@property (nonatomic,weak) UIImageView *imageView;
+@property (nonatomic,strong) UIImageView *imageView;
 /** 电影名称 */
-@property (nonatomic,weak) UILabel *titleLa;
+@property (nonatomic,strong) UILabel *titleLa;
 /** 评分 */
-@property (nonatomic,weak) UILabel *ScoreLa;
+@property (nonatomic,strong) UILabel *ScoreLa;
 /** 年份 */
-@property (nonatomic,weak) UILabel *yearLa;
+@property (nonatomic,strong) UILabel *yearLa;
 /** 类型 */
-@property (nonatomic,weak) UILabel *typeLa;
+@property (nonatomic,strong) UILabel *typeLa;
 
 @end
 
@@ -43,34 +43,25 @@
 }
 
 -(void)setUI{
-    UIImageView *imageView = [[UIImageView alloc]init];
-//    imageView.backgroundColor = [UIColor greenColor];
-    self.imageView = imageView;
-    [self.contentView addSubview:self.imageView];
+    self.imageView = [[UIImageView alloc]init];
     
-    UILabel *titleLa = [[UILabel alloc]init];
-//    titleLa.backgroundColor = [UIColor yellowColor];
-    titleLa.font = [UIFont systemFontOfSize:15];
-    self.titleLa = titleLa;
-    [self.contentView addSubview:self.titleLa];
+    self.titleLa = [[UILabel alloc]init];
+
+    self.titleLa.font = [UIFont systemFontOfSize:15];
+
     
-    UILabel *ScoreLa = [[UILabel alloc]init];
-//    ScoreLa.backgroundColor = [UIColor yellowColor];
-    ScoreLa.font = [UIFont systemFontOfSize:13];
-    self.ScoreLa = ScoreLa;
-    [self.contentView addSubview:self.ScoreLa];
+    self.ScoreLa = [[UILabel alloc]init];
+
+    self.ScoreLa.font = [UIFont systemFontOfSize:13];
+
+
     
-    UILabel *yearLa = [[UILabel alloc]init];
-//    yearLa.backgroundColor = [UIColor orangeColor];
-    yearLa.font = [UIFont systemFontOfSize:13];
-    self.yearLa = yearLa;
-    [self.contentView addSubview:self.yearLa];
+    self.yearLa= [[UILabel alloc]init];
+
+    self.yearLa.font = [UIFont systemFontOfSize:13];
     
-    UILabel *typeLa = [[UILabel alloc]init];
-//    typeLa = [UIColor orangeColor];
-    typeLa.font = [UIFont systemFontOfSize:15];
-    self.typeLa = typeLa;
-    [self.contentView addSubview:self.typeLa];
+    self.typeLa = [[UILabel alloc]init];
+    self.typeLa.font = [UIFont systemFontOfSize:15];
 }
 
 -(void)setMoviemodel:(XMMovieModel *)Moviemodel{
@@ -81,11 +72,13 @@
     
     CGFloat score = [Moviemodel.rating[@"average"] floatValue];
     
-    self.ScoreLa.text = [NSString stringWithFormat:@"%0.2f分",score];
+    self.ScoreLa.text = [NSString stringWithFormat:@"%0.1f分",score];
     
     self.yearLa.text = [NSString stringWithFormat:@"%@年",Moviemodel.year];
     
     self.typeLa.text =[NSString stringWithFormat:@"类型:%@",Moviemodel.genres.firstObject];
+    //重新布局一下
+    [self layoutSubviews];
 }
 
 -(void)setIsChan:(BOOL)isChan{
@@ -95,19 +88,25 @@
 -(void)layoutSubviews{
     [super layoutSubviews];
     
+    [self.contentView addSubview:self.imageView];
+    [self.contentView addSubview:self.titleLa];
+    [self.contentView addSubview:self.ScoreLa];
+    [self.contentView addSubview:self.yearLa];
+    [self.contentView addSubview:self.typeLa];
+    
     if (_ischangeone) {
-        self.imageView.X = 5;
+        self.imageView.centerX = self.bounds.size.width/2;
         self.imageView.Y = 5;
         self.imageView.width = self.bounds.size.width - 60;
         self.imageView.height = self.bounds.size.width - 60;
         
-        self.titleLa.frame = CGRectMake(5, self.bounds.size.width - 45, XMScreenW/2, 20);
+        self.titleLa.frame = CGRectMake(20, self.bounds.size.width - 45, XMScreenW/2, 20);
         
-        self.ScoreLa.frame = CGRectMake(5, self.bounds.size.width - 30, 50, 20);
+        self.ScoreLa.frame = CGRectMake(20, self.bounds.size.width - 30, 50, 20);
         
         self.yearLa.frame = CGRectMake(80, self.bounds.size.width - 30, 100, 20);
         
-        self.typeLa.frame = CGRectMake(5, self.bounds.size.width - 15, 100, 20);
+        self.typeLa.frame = CGRectMake(20, self.bounds.size.width - 15, 100, 20);
     }else{
         self.imageView.X = 5;
         self.imageView.Y = 5;

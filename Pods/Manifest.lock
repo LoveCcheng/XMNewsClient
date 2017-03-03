@@ -14,18 +14,28 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Masonry (1.0.2)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - Masonry (~> 1.0.2)
+  - NJKWebViewProgress (~> 0.2.3)
   - SDWebImage (~> 4.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 4353b7da8064c60aa2696817e304759021b81970
+PODFILE CHECKSUM: 095147721385e3bf3b5c537a7a0904bc6aa8d0fc
 
 COCOAPODS: 1.1.1

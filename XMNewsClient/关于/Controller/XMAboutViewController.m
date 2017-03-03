@@ -32,7 +32,7 @@
         
         flowlayout.minimumInteritemSpacing = 2;
         
-        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(2, 64, XMScreenW-4, XMScreenH-4) collectionViewLayout:flowlayout];
+        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(2, 64, XMScreenW-4, XMScreenH-64-49) collectionViewLayout:flowlayout];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         _collectionView.showsVerticalScrollIndicator = NO;
@@ -59,9 +59,8 @@
     self.navigationItem.title = @"关于";
     [XMOpreation getMovieFormServce];
     [self setRightBaritem];
-    self.automaticallyAdjustsScrollViewInsets =YES;
+    self.automaticallyAdjustsScrollViewInsets =NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getMoviedata:) name:XMMovieDataNotification object:nil];
-    
 }
 /** 添加切换显示模式的按钮 */
 -(void)setRightBaritem{
@@ -97,6 +96,11 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     XMMovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"XMMovieCollectionCell" forIndexPath:indexPath];
+    
+    for (UIView *view in cell.contentView.subviews) {
+        [view removeFromSuperview];
+    }
+
     cell.isChan =self.isChange;
     cell.Moviemodel = self.dataArray[indexPath.row];
     
@@ -106,14 +110,15 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     if (self.isChange) {
-        return CGSizeMake((XMScreenW - 6)/2, XMScreenH/4);
+        return CGSizeMake((XMScreenW - 30)/2, XMScreenH/4+30);
     }
     return CGSizeMake(XMScreenW - 4, XMScreenH/6);
 }
 
 
-
-
+//-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+//    return UIEdgeInsetsMake(5, 10, 5, 10);
+//}
 
 
 

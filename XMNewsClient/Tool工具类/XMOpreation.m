@@ -9,11 +9,7 @@
 #import "XMOpreation.h"
 #import "XMHttpRequest.h"
 
-#define HTTP_NEWS @"http://v.juhe.cn/toutiao/index"
-#define HTTP_KEY @"15acbd82bc3becf4d919d3f538907f44"
 
-
-#define HTTP_MOVIE @"https://api.douban.com/v2/movie/top250"
 @implementation XMOpreation
 
 
@@ -41,7 +37,6 @@
     NSArray *strArr = [dict[dir] componentsSeparatedByString:@","];
     return strArr;
 }
-
 /** 通过key得到颜色 */
 +(UIColor *)ColorWithKey:(NSString *)key{
     if ([XMOpreation AppDelegateIsFrist]) {
@@ -72,11 +67,44 @@
     return NO;
 }
 
-/** 从服务器获取数据 */
-+(void)getNewFormServce:(NSString *)str{
+/** 从服务器获取新闻数据 */
++(void)getNewFormServce:(XMNewType)type{
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"key"]=HTTP_KEY;
-    dict[@"type"] = @"top";
+    dict[@"key"]=HTTP_NEWS_KEY;
+    switch (type) {
+        case XMNewTypeTop:
+            dict[@"type"] = @"top";
+            break;
+        case XMNewTypeKeji:
+            dict[@"type"] = @"keji";
+            break;
+        case XMNewTypeShehui:
+            dict[@"type"] = @"shehui";
+            break;
+        case XMNewTypeGuonei:
+            dict[@"type"] = @"guonei";
+            break;
+        case XMNewTypeGuoji:
+            dict[@"type"] = @"guoji";
+            break;
+        case XMNewTypeYule:
+            dict[@"type"] = @"yule";
+            break;
+        case XMNewTypeTiyu:
+            dict[@"type"] = @"tiyu";
+            break;
+        case XMNewTypeJunshi:
+            dict[@"type"] = @"junshi";
+            break;
+        case XMNewTypeShishang:
+            dict[@"type"] = @"shishang";
+            break;
+        case XMNewTypeCaijing:
+            dict[@"type"] = @"caijing";
+            break;
+        default:
+            break;
+    }
     [[XMHttpRequest shareHttpRequest] beginHttpRequestWithUrl:HTTP_NEWS andParam:dict];
 }
 
@@ -84,9 +112,36 @@
 +(void)getMovieFormServce{
     [[XMHttpRequest shareHttpRequest] beginHttpRequestWithUrl:HTTP_MOVIE andParam:nil];
 }
+/** 获取历史上的今天的数据 */
++(void)getHistoryTodayDataFormServce{
+    NSArray *arr = [XMOpreation getDate];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"key"] = HTTP_TODAY_KEY;
+    dict[@"v"] = @(1.0);
+    dict[@"month"] = @([[arr firstObject] intValue]);
+    dict[@"day"] = @([[arr lastObject] intValue]);
+    [[XMHttpRequest shareHttpRequest] beginHttpRequestWithUrl:HTTP_TODAY andParam:dict];
+}
 
-
-
+/** 获取日期 */
++(NSArray *)getDate{
+    NSDate *date = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    unsigned int timeflags = NSCalendarUnitYear|
+    NSCalendarUnitMonth |
+    NSCalendarUnitDay |
+    NSCalendarUnitHour |
+    NSCalendarUnitMinute |
+    NSCalendarUnitSecond;
+    NSDateComponents *dateComponent = [calendar components:timeflags fromDate:date];
+    unsigned int month = (unsigned int)[dateComponent month];
+    unsigned int day = (unsigned int)[dateComponent day];
+    
+    NSMutableArray *Arr = [[NSMutableArray alloc]init];
+    [Arr addObject:[NSString stringWithFormat:@"%d",month]];
+    [Arr addObject:[NSString stringWithFormat:@"%d",day]];
+    return Arr;
+}
 
 
 
