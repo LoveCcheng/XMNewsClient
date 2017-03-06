@@ -37,15 +37,16 @@
     self.XMimageView = imageViewx;
     
     UILabel *eventla= [[UILabel alloc]init];
-    eventla.font  =[UIFont systemFontOfSize:13];
+    eventla.font  =[UIFont systemFontOfSize:11];
     eventla.numberOfLines = 0;
     eventla.backgroundColor = [UIColor blueColor];
     eventla.textColor = [UIColor whiteColor];
     self.EventLabel = eventla;
     
     UILabel *TimeLabel= [[UILabel alloc]init];
-    TimeLabel.font  =[UIFont systemFontOfSize:11];
-    TimeLabel.backgroundColor = [UIColor yellowColor];
+    TimeLabel.font  =[UIFont systemFontOfSize:10];
+    TimeLabel.numberOfLines = 0;
+    TimeLabel.backgroundColor = [UIColor lightGrayColor];
     self.TimeLabel = TimeLabel;
     
     [self.contentView addSubview:self.XMimageView];
@@ -58,11 +59,14 @@
 
 -(void)setHistoryModel:(XMHistoryModel *)HistoryModel{
     _HistoryModel = HistoryModel;
-
     //赋值操作
     [self.XMimageView sd_setImageWithURL:[NSURL URLWithString:HistoryModel.pic] placeholderImage:[UIImage imageNamed:@"placeholder"]];
-    
     self.EventLabel.text = HistoryModel.title;
+    
+//    NSString *date = [NSString stringWithFormat:@"%@-%@",HistoryModel.month,HistoryModel.day];
+    self.TimeLabel.text = HistoryModel.des;
+    
+    
 
 }
 -(void)layoutSubviews{
@@ -71,13 +75,12 @@
     __weak typeof(self)weakSelf = self;
     [self.TimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.left.bottom.equalTo(weakSelf.contentView).offset(0);
-        make.height.equalTo(@20);
+        make.height.equalTo(@40);
     }];
-    
     [self.EventLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.left.equalTo(weakSelf.contentView).offset(0);
         make.bottom.equalTo(weakSelf.TimeLabel.mas_top).offset(0);
-        make.height.equalTo(@50);
+        make.height.equalTo(@40);
     }];
     
     [self.XMimageView mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -32,7 +32,7 @@ static NSString * const XMModelCell = @"XMModelCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"段子";
+    self.navigationItem.title = @"今天";
     self.view.backgroundColor = [XMOpreation ColorWithKey:XMkey];
     //发送请求
     [XMOpreation getHistoryTodayDataFormServce];
@@ -40,14 +40,22 @@ static NSString * const XMModelCell = @"XMModelCell";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetHistoryData:) name:XMHistoryDataNotification object:nil];
     
     [self SetUI];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBgColor) name:XMLeftViewNightTypeNotification object:nil];
 }
+-(void)changeBgColor{
+    self.collectionView.backgroundColor = [XMOpreation ColorWithKey:XMkey];
+}
+
 /** 获取数据 */
 -(void)GetHistoryData:(NSNotification *)noti{
     NSDictionary *dict = noti.object;
     NSArray *arr = dict[@"result"];
     for (int i=0; i<arr.count; i++) {
         XMHistoryModel *model = [XMHistoryModel initWithDictionary:arr[i]];
-        [self.dataArray addObject:model];
+        if (![model.pic isEqualToString:@""]) {
+            [self.dataArray addObject:model];
+        }
     }
     [self.collectionView reloadData];
 }
@@ -59,6 +67,7 @@ static NSString * const XMModelCell = @"XMModelCell";
     //创建collectionView
     UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:layout];
     collectionView.dataSource = self ;
+    collectionView.backgroundColor = [XMOpreation ColorWithKey:XMkey];
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
     //注册
@@ -70,9 +79,6 @@ static NSString * const XMModelCell = @"XMModelCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     XMHistoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XMModelCell forIndexPath:indexPath];
-
-    cell.backgroundColor = [UIColor orangeColor];
-    
     cell.HistoryModel = self.dataArray[indexPath.item];
     
     return cell;
@@ -81,21 +87,16 @@ static NSString * const XMModelCell = @"XMModelCell";
 #pragma mark - XMWaterLayoutDelegate
 /** 返回cell的高度 */
 -(CGFloat)WaterFlowLayout:(XMWaterLayout *)WaterFlowlayout HeightForItemAtIndex:(NSUInteger)index itemWidth:(CGFloat)itemWidth{
-    CGFloat picH = 20+arc4random_uniform(20);
+    CGFloat picH = 15+arc4random()%15;
     CGFloat picW = 10+arc4random_uniform(20);
     CGFloat cellHeight = itemWidth*picH/picW;
     return cellHeight;
 }
 
-
-
-
-
-
-
-
-
-
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 

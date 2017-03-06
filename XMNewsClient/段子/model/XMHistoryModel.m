@@ -8,7 +8,9 @@
 
 #import "XMHistoryModel.h"
 
+
 @implementation XMHistoryModel
+
 
 +(instancetype)initWithDictionary:(NSDictionary *)dict{
     XMHistoryModel *model = [[self alloc]init];
@@ -23,6 +25,44 @@
 -(NSString *)description{
     return [NSString stringWithFormat:@"title---%@,pic_url----%@,%@",self.title,self.des,self.pic];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end

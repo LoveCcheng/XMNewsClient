@@ -24,7 +24,11 @@
 /** 日 */
 @property (nonatomic,copy) NSString *day;
 
+
+
 +(instancetype)initWithDictionary:(NSDictionary *)dict;
+
+
 
 
 @end
