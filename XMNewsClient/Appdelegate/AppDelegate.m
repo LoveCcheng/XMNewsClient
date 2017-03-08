@@ -10,8 +10,11 @@
 #import "XMLeftViewController.h"
 #import "XMSideViewController.h"
 #import "XMTabBarController.h"
+#import <SMSSDK/SMS_SDK/SMSSDK.h>
 
-
+//短信验证码的配置
+#define SMS_appkey @"1bde216d901c4"
+#define SMS_secret @"25daeee68b2acaacf3e0e4ba4c15e32c"
 
 @interface AppDelegate ()
 
@@ -29,12 +32,12 @@
     
     XMSideViewController *sideVC = [XMSideViewController SideViewControllerWithLeftController:leftVC andMainController:tabbarVC];
     
-    
 
     self.window.rootViewController = sideVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyWindow];
     
+    [SMSSDK registerApp:SMS_appkey withSecret:SMS_secret];
     
     return YES;
 }

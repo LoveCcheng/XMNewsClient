@@ -70,7 +70,6 @@
     XMJokeViewController *jokeVC = [[XMJokeViewController alloc]init];
     [self addoneController:jokeVC andTitle:@"段子" andImage:[UIImage imageNamed:@"tab_icon_quiz_normal"] andSelectImage:[UIImage imageNamed:@"tab_icon_quiz_press"]];
     
-    
     XMAboutViewController *aboutVC = [[XMAboutViewController alloc]init];
     [self addoneController:aboutVC andTitle:@"关于" andImage:[UIImage imageNamed:@"tab_icon_quiz_normal"] andSelectImage:[UIImage imageNamed:@"tab_icon_quiz_press"]];
     
@@ -87,7 +86,6 @@
     XMNavigationViewController *nav = [[XMNavigationViewController alloc]initWithRootViewController:controller];
     [self addChildViewController:nav];
 }
-
 /** 设置底部选中图片的默认不渲染 */
 -(UIImage *)setImageDisplayModel:(UIImage *)image{
     UIImage *imageModel = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -102,10 +100,8 @@
 //    self.hideView = view;
 //    [self.view addSubview:view];
 //}
-
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
 }
 
 

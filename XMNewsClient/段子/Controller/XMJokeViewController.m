@@ -7,117 +7,106 @@
 //
 
 #import "XMJokeViewController.h"
-#import "XMHistoryModel.h"
+#import "XMJokeModel.h"
 #import "XMWaterLayout.h"
-#import "XMHistoryCell.h"
+#import "XMJokeViewCell.h"
 
-@interface XMJokeViewController ()<UICollectionViewDataSource,XMWaterLayoutDelegate>
+@interface XMJokeViewController ()<XMWaterLayoutDelegate,UICollectionViewDataSource>
 
 @property (nonatomic,strong) NSMutableArray *dataArray;
-
 @property (nonatomic,weak) UICollectionView *collectionView;
 
 @end
 
 @implementation XMJokeViewController
 
-static NSString * const XMModelCell = @"XMModelCell";
+//-(UICollectionView *)collectionView{
+//    if (!_collectionView) {
+//        XMWaterLayout *waterLayout = [[XMWaterLayout alloc]init];
+//        waterLayout.delegate =self;
+//        
+//        UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:waterLayout];
+//        collectionView.dataSource = self;
+//        collectionView.backgroundColor = [XMOpreation ColorWithKey:XMkey];
+//        
+//        [collectionView registerClass:[XMJokeViewCell class] forCellWithReuseIdentifier:@"CollCell"];
+//        _collectionView = collectionView;
+//    }
+//    return _collectionView;
+//}
 
 -(NSMutableArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = [[NSMutableArray alloc]init];
+        _dataArray = [NSMutableArray array];
     }
     return _dataArray;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"今天";
+    self.navigationItem.title = @"段子";
     self.view.backgroundColor = [XMOpreation ColorWithKey:XMkey];
+    [self setCollection];
     //发送请求
-    [XMOpreation getHistoryTodayDataFormServce];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetHistoryData:) name:XMHistoryDataNotification object:nil];
-    
-    [self SetUI];
+    [XMOpreation getJokeDataFormServceWithPage:1 AndPagesize:10];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBgColor) name:XMLeftViewNightTypeNotification object:nil];
-}
--(void)changeBgColor{
-    self.collectionView.backgroundColor = [XMOpreation ColorWithKey:XMkey];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getJokeData:) name:XMJokeDataNotification object:nil];
 }
 
-/** 获取数据 */
--(void)GetHistoryData:(NSNotification *)noti{
+-(void)setCollection{
+    XMWaterLayout *waterLayout = [[XMWaterLayout alloc]init];
+    waterLayout.delegate =self;
+    
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:waterLayout];
+    collectionView.dataSource = self;
+    collectionView.backgroundColor = [XMOpreation ColorWithKey:XMkey];
+    
+    [self.view addSubview:collectionView];
+    
+    [collectionView registerClass:[XMJokeViewCell class] forCellWithReuseIdentifier:@"CollCell"];
+    self.collectionView = collectionView;
+
+}
+
+-(void)changeBgColor{
+    self.view.backgroundColor = [XMOpreation ColorWithKey:XMkey];
+}
+-(void)getJokeData:(NSNotification *)noti{
     NSDictionary *dict = noti.object;
-    NSArray *arr = dict[@"result"];
+    NSArray *arr = dict[@"result"][@"data"];
     for (int i=0; i<arr.count; i++) {
-        XMHistoryModel *model = [XMHistoryModel initWithDictionary:arr[i]];
-        if (![model.pic isEqualToString:@""]) {
-            [self.dataArray addObject:model];
-        }
+        XMJokeModel *model = [XMJokeModel initWithDictionary:arr[i]];
+        
+        [self.dataArray addObject:model];
     }
     [self.collectionView reloadData];
 }
 
--(void)SetUI{
-    //创建布局
-    XMWaterLayout *layout = [[XMWaterLayout alloc]init];
-    layout.delegate = self;
-    //创建collectionView
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:layout];
-    collectionView.dataSource = self ;
-    collectionView.backgroundColor = [XMOpreation ColorWithKey:XMkey];
-    [self.view addSubview:collectionView];
-    self.collectionView = collectionView;
-    //注册
-    [collectionView registerClass:[XMHistoryCell class] forCellWithReuseIdentifier:XMModelCell];
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataArray.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    XMHistoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:XMModelCell forIndexPath:indexPath];
-    cell.HistoryModel = self.dataArray[indexPath.item];
-    
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    XMJokeViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollCell" forIndexPath:indexPath];
+    cell.jokeModel = self.dataArray[indexPath.row];
     return cell;
 }
 
-#pragma mark - XMWaterLayoutDelegate
-/** 返回cell的高度 */
 -(CGFloat)WaterFlowLayout:(XMWaterLayout *)WaterFlowlayout HeightForItemAtIndex:(NSUInteger)index itemWidth:(CGFloat)itemWidth{
-    CGFloat picH = 15+arc4random()%15;
-    CGFloat picW = 10+arc4random_uniform(20);
-    CGFloat cellHeight = itemWidth*picH/picW;
-    return cellHeight;
+    
+    XMJokeModel *model = self.dataArray[index];
+    CGSize maxSize = CGSizeMake(itemWidth, MAXFLOAT);
+    //计算文字的高度
+    CGFloat TextH = [model.content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} context:nil].size.height;
+    //20是时间的高度
+    CGFloat cellH =TextH + 20;
+    
+    return cellH;
 }
-
--(void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

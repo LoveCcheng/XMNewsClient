@@ -29,6 +29,9 @@ NSString *XMNewsDataNotification = @"XMNewsDataNotification";
 /** 获取历史上今天数据的通知 */
 NSString *XMHistoryDataNotification = @"XMHistoryDataNotification";
 
+/** 获取段子数据的通知 */
+NSString *XMJokeDataNotification = @"XMJokeDataNotification";
+
 
 
 

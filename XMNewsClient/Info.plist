@@ -29,6 +29,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+    <key>NSContactsUsageDescription</key>
+    <string>i don't kown what i do</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>从相册中选择图片</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

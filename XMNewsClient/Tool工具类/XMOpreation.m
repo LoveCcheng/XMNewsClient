@@ -61,7 +61,6 @@
     if (![currentVersion isEqualToString:lastVersion]) {
         //保存当前版本信息
         [XMOpreation saveInfo:currentVersion WithKey:XMVersion];
-        
         return YES;
     }
     return NO;
@@ -122,7 +121,6 @@
     dict[@"day"] = @([[arr lastObject] intValue]);
     [[XMHttpRequest shareHttpRequest] beginHttpRequestWithUrl:HTTP_TODAY andParam:dict];
 }
-
 /** 获取日期 */
 +(NSArray *)getDate{
     NSDate *date = [NSDate date];
@@ -142,6 +140,103 @@
     [Arr addObject:[NSString stringWithFormat:@"%d",day]];
     return Arr;
 }
+
+/** 获取段子信息 */
++(void)getJokeDataFormServceWithPage:(NSInteger)page AndPagesize:(NSInteger)pageSize{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"key"] = HTTP_JOKE_KEY;
+    dict[@"sort"] = @"desc";
+    dict[@"page"] = [NSString stringWithFormat:@"%ld",page];
+    dict[@"pagesize"] = [NSString stringWithFormat:@"%ld",pageSize];
+    //获取时间戳
+    NSTimeInterval dateTime = [[NSDate date] timeIntervalSince1970];
+//    XMLog(@"--%0.2f",date);
+    dict[@"time"] = [NSString stringWithFormat:@"%.0f",dateTime];
+    [[XMHttpRequest shareHttpRequest] beginHttpRequestWithUrl:HTTP_JOKE andParam:dict];
+}
+
+
+/** 用alelt弹出提示信息 */
+/*
++(void)showAlertMessage:(NSString *)message{
+    UIAlertController *alertController=[UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:cancelAction];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES
+                                                                               completion:nil];
+}
+ */
+
+/** 显示自定义的信息 */
++(void)showCustomMessage:(NSString *)message{
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UIView *showView = [[UIView alloc]init];
+    showView.backgroundColor = [UIColor blackColor];
+    showView.alpha = 1.0f;
+    showView.width = 120;
+    showView.height = 50;
+    showView.center = CGPointMake(XMScreenW*0.5, XMScreenH*0.5);
+    showView.layer.cornerRadius = 5.0;
+    showView.layer.masksToBounds = YES;
+    //放在最上层
+    [window insertSubview:showView atIndex:9999];
+    
+    UILabel *label = [[UILabel alloc]init];
+    label.frame = CGRectMake(5, 10, 100, 40);
+    label.text = message;
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont systemFontOfSize:17];
+    label.textAlignment = NSTextAlignmentCenter;
+    [showView addSubview:label];
+    
+    //使用动画
+    [UIView animateWithDuration:2.0 animations:^{
+        //透明度变0
+        showView.alpha=0;
+    } completion:^(BOOL finished) {
+        //移除视图
+        [showView removeFromSuperview];
+    }];
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

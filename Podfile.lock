@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - Masonry (1.0.2)
+  - MOBFoundation_IDFA (2.2.13)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
     - NJKWebViewProgress/ProgressView (= 0.2.3)
@@ -23,19 +24,25 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SMSSDK (2.1.4):
+    - MOBFoundation_IDFA
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - Masonry (~> 1.0.2)
+  - MOBFoundation_IDFA (~> 2.2.13)
   - NJKWebViewProgress (~> 0.2.3)
   - SDWebImage (~> 4.0.0)
+  - SMSSDK (~> 2.1.4)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MOBFoundation_IDFA: 13a97a3a8dff584e745f71ca58d7c172797981e3
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SMSSDK: 4b5c95fc74522969187123df61b2c9567f48435e
 
-PODFILE CHECKSUM: 095147721385e3bf3b5c537a7a0904bc6aa8d0fc
+PODFILE CHECKSUM: f23fb58250e3ece05b5aac897e30ffc88a2f6ad4
 
 COCOAPODS: 1.1.1

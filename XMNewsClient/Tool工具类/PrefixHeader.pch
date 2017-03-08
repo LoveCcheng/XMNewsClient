@@ -15,6 +15,7 @@
 #import "XMBaseViewController.h"
 #import "XMConst.h"
 #import "XMOpreation.h"
+#import "UIViewController+XMDealloc.h"
 
 /** 关键字。颜色模式的 */
 #define XMkey @"xmkey"

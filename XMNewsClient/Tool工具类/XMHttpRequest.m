@@ -27,7 +27,7 @@
     }
     return self;
 }
-
+/** 初始化单利 */
 +(instancetype)shareHttpRequest{
     static XMHttpRequest *manager = nil;
     static dispatch_once_t onceToken;
@@ -36,12 +36,11 @@
     });
     return manager;
 }
-
+/** 开始请求数据 */
 -(void)beginHttpRequestWithUrl:(NSString *)Url andParam:(NSDictionary *)param{
     [self getWithUrlString:Url andParam:param];
-    
 }
-
+/** get请求 */
 -(void)getWithUrlString:(NSString *)UrlString andParam:(NSDictionary *)param{
     _manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
     [_manager GET:UrlString parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -58,6 +57,11 @@
         //历史上今天数据
         if ([param[@"key"] isEqualToString:HTTP_TODAY_KEY]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:XMHistoryDataNotification object:responseObject];
+        }
+        
+        //段子数据
+        if ([param[@"key"] isEqualToString:HTTP_JOKE_KEY]){
+            [[NSNotificationCenter defaultCenter] postNotificationName:XMJokeDataNotification object:responseObject];
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

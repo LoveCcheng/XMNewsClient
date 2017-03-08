@@ -34,5 +34,16 @@
 /** 获取历史上的今天的数据 */
 +(void)getHistoryTodayDataFormServce;
 
+/** 获取段子信息  page:页码  pageSize:每页的数量 */
++(void)getJokeDataFormServceWithPage:(NSInteger)page AndPagesize:(NSInteger)pageSize;
+
+/** 用alelt弹出提示信息 */
+//+(void)showAlertMessage:(NSString *)message;
+
+/** 显示自定义的信息 */
++(void)showCustomMessage:(NSString *)message;
+
+
+
 
 @end
